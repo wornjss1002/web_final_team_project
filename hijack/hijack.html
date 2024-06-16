@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JB CINEMA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="navbar-brand"><a href="/index.html">JB CINEMA</a></h1>
+      <div class="header-divider"></div>
+      <div class="header-links">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/booking.html">예매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/food.html">스토어</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/team.html">팀원소개</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid main-container">
+      <div class="review">
+        <div>
+          <img src="/img/hijack.jpg" alt="" />
+        </div>
+        <div>
+          <h2>하이재킹</h2>
+          <h5>Hijack 1971</h5>
+          <br />
+          <p>
+            1971년 겨울 속초공항<br />
+            여객기 조종사 태인(하정우)과 규식(성동일)은 김포행 비행에 나선다.
+            승무원 옥순(채수빈)의 안내에 따라 탑승 중인 승객들의 분주함도 잠시,
+            이륙한지 얼마 되지 않아 사제폭탄이 터지며 기내는 아수라장이 된다.
+            <br />
+            "지금부터 이 비행기 이북 간다"
+            <br />
+            여객기를 통째로 납치하려는 용대(여진구)는 조종실을 장악하고 무작정
+            북으로 기수를 돌리라 협박한다.
+            <br />
+            폭발 충격으로 규식은 한 쪽 시력을 잃고 혼란스러운 기내에서
+            절체절명의 상황에 처한 태인. 이들은 여객기를 무사히 착륙시키기 위한
+            사투를 시작하는데...
+            <br />
+            대한민국 상공 여객기 납치 사건 이 비행에 모두가 목숨을 걸었다!
+          </p>
+          <br />
+          <button class="likebutton">좋아요 : 0</button>
+          <button><a href="/booking.html">이 영화 예매하러 가기</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="review container p-4 mt-4">
+        <form id="book-form">
+          <div class="form-group">
+            <label for="title">닉네임</label>
+            <input type="text" id="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="author">리뷰 코멘트</label>
+            <input type="text" id="author" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="isbn">평점</label>
+            <input type="text" id="isbn" class="form-control" />
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <input
+              type="submit"
+              value="리뷰 작성"
+              class="btn bg-black text-white"
+            />
+          </div>
+        </form>
+        <table class="table table-striped mt-4 text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>닉네임</th>
+              <th>리뷰 코멘트</th>
+              <th>평점</th>
+              <th>코멘트 삭제</th>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="container-fluid footer-container">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p>&copy; 2024 JB Cinema. All rights reserved.</p>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollToTopButton" title="맨 위로 가기">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Dark Mode Toggle Button -->
+    <div class="dark-mode-toggle">
+      <div class="moon-icon">
+        <i class="fas fa-moon"></i>
+      </div>
+      <div class="sun-icon">
+        <i class="fas fa-sun"></i>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../script.js"></script>
+    <script src="pamyo.js"></script>
+  </body>
+</html>

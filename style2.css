@@ -1,0 +1,383 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글자색 전환 효과 추가 */
+}
+
+/* Header */
+.header-container {
+  width: 70%;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  z-index: 6;
+  transition: all 0.3s ease;
+  padding-top: 20px; /* 패딩 탑을 추가하여 스크롤하지 않은 상태에서 배경색 문제 해결 */
+}
+
+.header-container.scrolled {
+  margin-top: 0;
+  padding-top: 0; /* 스크롤 시 패딩 탑 제거 */
+}
+
+.header-divider {
+  border-top: 1px solid #dee2e6;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.header-divider.hidden {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.header-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 5;
+  padding-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.header-links.scrolled {
+  background-color: #ed3124;
+}
+
+.header-links .nav-item {
+  margin: 0 10px;
+}
+
+.header-links .nav-link {
+  color: #333;
+}
+
+.header-links .nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand.hidden {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+/* Main Content */
+.main-container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding-top: 160px;
+  transition: background-color 0.3s ease; /* 본문 배경색 전환 효과 추가 */
+}
+
+.main-container.dark-mode {
+  background-color: #333; /* 다크 모드 본문 배경색 */
+  color: #fff; /* 다크 모드 본문 글자색 */
+}
+
+/* Footer */
+.footer-container {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* 푸터 배경색 전환 효과 추가 */
+}
+
+.footer-container.dark-mode {
+  background-color: #222; /* 다크 모드 푸터 배경색 */
+  color: #fff; /* 다크 모드 푸터 글자색 */
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll to Top 버튼 */
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopButton:hover {
+  background-color: #0056b3;
+}
+
+#scrollToTopButton i {
+  line-height: 50px;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.dark-mode-toggle .moon-icon,
+.dark-mode-toggle .sun-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dark-mode-toggle .moon-icon {
+  display: block;
+}
+
+.dark-mode-toggle .sun-icon {
+  display: none;
+}
+
+.dark-mode .moon-icon {
+  display: none;
+}
+
+.dark-mode .sun-icon {
+  display: block;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode .footer-links a {
+  color: #ffffff;
+}
+
+.dark-mode-text {
+  color: #ffffff !important; /* !important를 사용하여 우선순위를 높이세요 */
+}
+
+.dark-mode .header-container {
+  background-color: #333;
+  color: #ffffff;
+  padding-bottom: 20px; /* dark mode일 때 padding-bottom 추가 */
+}
+
+.dark-mode .header-links {
+  background-color: #333; /* dark mode일 때 header-links의 배경색 변경 */
+}
+
+.dark-mode .header-links .nav-link {
+  color: #ffffff; /* dark mode일 때 header-links의 글자색 변경 */
+}
+
+.dark-mode .header-divider {
+  border-top-color: #ffffff; /* dark mode일 때 header-divider의 색상 변경 */
+}
+
+.slider-wrap {
+  height: 461px;
+}
+
+.slider {
+  position: relative;
+  width: 95%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slides-contant {
+  width: 170px;
+  height: 295px;
+  text-align: center;
+  min-width: 20%;
+  box-sizing: border-box;
+  margin-right: 32px;
+}
+
+.slides-contant p {
+  margin-top: 10px;
+}
+
+.slide img {
+  width: 170px;
+  height: 234px;
+  vertical-align: middle;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode {
+  background-color: #333 !important;
+  color: #ffffff !important;
+}
+.dark-mode .card {
+  background-color: #444 !important;
+  color: #ffffff !important;
+}
+.dark-mode .btn-primary {
+  background-color: #555 !important;
+  border-color: #555 !important;
+}
+
+.dark-mode .row {
+  background-color: #333 !important;
+  color: #ffffff !important;
+}
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #scrollToTopButton {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* TEAM */
+
+/* 팀 섹션 스타일 */
+#team {
+  padding: 50px 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+#team .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#team h2 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.team {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.team_member {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 32px;
+  text-align: center;
+  flex-basis: calc(25% - 40px);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.team_member a {
+  text-decoration: none;
+}
+.team_member img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.team_member h3 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.team_member p {
+  font-size: 1em;
+  color: #777;
+}
+
+.team_member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

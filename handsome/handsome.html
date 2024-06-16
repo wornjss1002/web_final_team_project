@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JB CINEMA</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <div class="header-container">
+      <h1 class="navbar-brand"><a href="/index.html">JB CINEMA</a></h1>
+      <div class="header-divider"></div>
+      <div class="header-links">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/booking.html">예매</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/food.html">스토어</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/team.html">팀원소개</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container-fluid main-container">
+      <div class="review">
+        <div>
+          <img src="/img/handsome.jpg" alt="" />
+        </div>
+        <div>
+          <h2>핸섬가이즈</h2>
+          <h5>Handsome Guys</h5>
+          <br />
+          <p>
+            “우리가 뭐 빠지는 게 있노? 집도 있고 차도 있고 인물도 훤칠한데.”<br />
+            자칭 터프가이 ‘재필’(이성민)과 섹시가이 ‘상구’(이희준)
+            <br />
+            현실은 잊지 못할 첫인상으로 이사 첫날부터 동네 경찰 ‘최
+            소장’(박지환)과 ‘남 순경’(이규형)의 특별 감시 대상이 되지만, 꿈꾸던
+            유럽풍 드림하우스에서 새출발한다는 것에 그저 행복하기만 하다. 그러나
+            행복도 잠시, 물에 빠질뻔한 ‘미나’(공승연)을 구해주려다 오히려
+            납치범으로 오해받는 상황이 이어진다. 한편 ‘미나’를 찾으러 온
+            불청객들을 시작으로 지하실에 봉인되어 있던 악령이 깨어나며 어두운
+            기운이 집안을 둘러싸기 시작하는데…
+            <br />
+            “왜 다들 우리집에 와서 죽고 난리야!”
+          </p>
+          <br />
+          <button class="likebutton">좋아요 : 0</button>
+          <button><a href="/booking.html">이 영화 예매하러 가기</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="review container p-4 mt-4">
+        <form id="book-form">
+          <div class="form-group">
+            <label for="title">닉네임</label>
+            <input type="text" id="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="author">리뷰 코멘트</label>
+            <input type="text" id="author" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="isbn">평점</label>
+            <input type="text" id="isbn" class="form-control" />
+          </div>
+
+          <div class="d-grid gap-2 mt-4">
+            <input
+              type="submit"
+              value="리뷰 작성"
+              class="btn bg-black text-white"
+            />
+          </div>
+        </form>
+        <table class="table table-striped mt-4 text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>닉네임</th>
+              <th>리뷰 코멘트</th>
+              <th>평점</th>
+              <th>코멘트 삭제</th>
+            </tr>
+          </thead>
+          <tbody id="book-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="container-fluid footer-container">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p>&copy; 2024 JB Cinema. All rights reserved.</p>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollToTopButton" title="맨 위로 가기">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Dark Mode Toggle Button -->
+    <div class="dark-mode-toggle">
+      <div class="moon-icon">
+        <i class="fas fa-moon"></i>
+      </div>
+      <div class="sun-icon">
+        <i class="fas fa-sun"></i>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/script.js"></script>
+    <script src="handsome.js"></script>
+  </body>
+</html>

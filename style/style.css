@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease; /* 배경색과 글자색 전환 효과 추가 */
+}
+
+/* Header */
+.header-container {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-container.scrolled {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header-divider {
+  border-top: 1px solid #dee2e6;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.header-divider.hidden {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.header-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+  padding-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.header-links.scrolled {
+  background-color: #ed3124;
+}
+
+.header-links .nav-item {
+  margin: 0 10px;
+}
+
+.header-links .nav-link {
+  color: #333;
+}
+
+.header-links .nav-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand.hidden {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+/* Main Content */
+.main-container {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 20px;
+  padding-top: 160px;
+  transition: background-color 0.3s ease; /* 본문 배경색 전환 효과 추가 */
+}
+
+.main-container.dark-mode {
+  background-color: #222; /* 다크 모드 본문 배경색 */
+  color: #fff; /* 다크 모드 본문 글자색 */
+}
+
+/* Footer */
+.footer-container {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease; /* 푸터 배경색 전환 효과 추가 */
+}
+
+.footer-container.dark-mode {
+  background-color: #222; /* 다크 모드 푸터 배경색 */
+  color: #fff; /* 다크 모드 푸터 글자색 */
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Scroll to Top 버튼 */
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopButton:hover {
+  background-color: #0056b3;
+}
+
+#scrollToTopButton i {
+  line-height: 50px;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.dark-mode-toggle .moon-icon,
+.dark-mode-toggle .sun-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dark-mode-toggle .moon-icon {
+  display: block;
+}
+
+.dark-mode-toggle .sun-icon {
+  display: none;
+}
+
+.dark-mode .moon-icon {
+  display: none;
+}
+
+.dark-mode .sun-icon {
+  display: block;
+}
+.dark-mode {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark-mode .footer-links a {
+  color: #ffffff;
+}
+
+.dark-mode-text {
+  color: #ffffff !important; /* !important를 사용하여 우선순위를 높이세요 */
+}
+.dark-mode .header-container {
+  background-color: #333;
+  color: #ffffff;
+  padding-bottom: 20px; /* dark mode일 때 padding-bottom 추가 */
+}
+
+.dark-mode .header-links {
+  background-color: #333; /* dark mode일 때 header-links의 배경색 변경 */
+}
+
+.dark-mode .header-links .nav-link {
+  color: #ffffff; /* dark mode일 때 header-links의 글자색 변경 */
+}
+
+.dark-mode .header-divider {
+  border-top-color: #ffffff; /* dark mode일 때 header-divider의 색상 변경 */
+}
+
+@media (max-width: 768px) {
+  #scrollToTopButton {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+.review {
+  display: flex;
+  flex-direction: auto;
+}
+
+.review div {
+  margin: 20px;
+  padding: 10px;
+}
+
+.review img {
+  width: 250px;
+}
+
+.review h2 {
+  font-weight: bold;
+}
